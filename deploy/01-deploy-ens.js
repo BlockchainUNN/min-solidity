@@ -15,7 +15,7 @@ module.exports = async({ getNamedAccounts, deployments }) => {
     })
 
     if(chainId != 31337 && process.env.ETHERSCAN_API_KEY) {
-        await verify(ENS.address, ['0xdC5f4f0bE199443BbFa0796B414710ecF492b36f', "Darlington"])
+        await verify(ENS.address, ['0xdC5f4f0bE199443BbFa0796B414710ecF492b36f', "Darlington"], 'contracts/min_ens/ENS.sol:ENS')
     } 
 }
 
