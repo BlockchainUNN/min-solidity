@@ -14,13 +14,13 @@ module.exports = async({ getNamedAccounts, deployments }) => {
         waitConfirmations: network.config.blockConfirmations || 1,
     })
 
-    if(chainId != 31337 && process.env.ETHERSCAN_API_KEY) [
+    if(chainId != 31337 && process.env.ETHERSCAN_API_KEY) {
         await verify(
             NFTContract.address,
             [],
             "contracts/min_erc721/MYNFT.sol:MYNFT",
         )
-    ]
+    }
 }
 
 module.exports.tags = ["all", "nft"]
